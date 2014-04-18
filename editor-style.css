@@ -1,0 +1,97 @@
+/*
+Theme Name: Chrico
+Description: TinyMC Styles for ChricoTheme
+*/
+
+html { overflow-y: scroll; font-size: 87.5%;  -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { font: 14px/1.5 Imprima, Tahoma, Arial, sans-serif; background:#f2f5e9; text-rendering: optimizeLegibility; color: #364656; }
+
+/* lists */
+ol, ul { list-style: none; }
+ul ul, ul ol, ol, ul { margin-bottom: 0; }
+dl { margin:0.5rem 1.7em 0; }
+dt { font-weight: bold; line-height:1.7; }
+dd { line-height: 1.7; margin:0 0 1rem; }
+
+/* quote and code */
+blockquote,q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+blockquote { margin:1.5em 0 1.5em 1.5em; border-left:3px solid #132945; color:#5e5e5e; padding-left:0.5em; font-style: italic; }
+blockquote p:last-child { margin-bottom: 0; }
+code { font-family: Consolas, Monaco, Lucida Console, monospace; font-size: 0.85em; line-height: 2; }
+pre {
+	display: block;
+	border: 1px solid #ededed;
+	color: #666;
+	font-family: Consolas, Monaco, Lucida Console, monospace;
+	font-size: 0.85em;
+	line-height: 1.7;
+	margin: 0.5rem 0;
+	overflow: auto;
+	padding: 1.7em;
+}
+
+/* table */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-bottom: 1px solid #ededed;
+	color: #757575;
+	font-size: 0.85em;
+	line-height: 2;
+	margin:0.5rem 0;
+	width: 100%;
+}
+caption,th,td { font-weight: normal; text-align: left; }
+caption { font-size: 1.15em; margin: 1.7em 0; }
+td { border-top: 1px solid #ededed; padding: 6px 10px 6px 0; }
+
+/* headlines */
+h1,h2,h3,h4,h5,h6 { clear: both; }
+h1 { font-size: 275%; font-family: Merienda, sans-serif; }
+h2 { font-size: 150%; font-family: Merienda, sans-serif; }
+h3,h4,h5,h6 { margin:1rem 0; }
+h3 { font-size: 200%; }
+h4 { font-size: 175%; }
+h5 { font-size: 150% }
+h6 { font-size: 125% }
+
+/* anchors */
+a { outline: none; color:#b03c3a; text-decoration:none; }
+a:hover,a:focus { color: #0f3647; }
+a:focus { outline: thin dotted; }
+
+/* html5 elements */
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {	display: block; }
+
+/* figures and images */
+
+img { border: 0; -ms-interpolation-mode: bicubic; }
+figure {}
+figcaption {
+	color: #666;
+	font-size: 90%;
+	font-style: italic;
+}
+
+/* inline codes */
+del { color: #333; }
+ins { background:#ccc; text-decoration: none; }
+hr { background-color: #ccc; border: 0; height: 1px; margin: 24px; margin-bottom: 1.7em; }
+sub,sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+small { font-size: smaller; }
+
+abbr,dfn,acronym,acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+
+/* address */
+address {
+	display: block;
+	line-height: 1.7;
+	margin: 1em 0;
+}
