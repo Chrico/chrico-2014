@@ -14,9 +14,9 @@ if ( post_password_required() )
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h3 id="comments-title">
+		<h2 id="comments-title">
 			<?php _e( 'Das denkt Ihr über diesen Beitrag:', CC_TEXTDOMAIN ) ?>
-		</h3>
+		</h2>
 
 		<ol id="commentlist">
 			<?php wp_list_comments(

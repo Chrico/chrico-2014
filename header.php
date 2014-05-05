@@ -24,7 +24,9 @@
 <div id="site">
 
 	<header id="site-header" role="banner">
-		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<a id="site-header-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<?php bloginfo( 'name' ); ?>
+		</a>
 		<?php get_search_form(); ?>
 	</header>
 

@@ -7,7 +7,7 @@
  */
 ?>
 <header class="entry-header">
-	<h2 class="entry-title">
+	<h1 class="entry-title">
 		<?php
 		if ( ! is_singular() ) : // archives
 		?>
@@ -20,7 +20,7 @@
 			the_title();
 		endif;
 		?>
-	</h2>
+	</h1>
 
 	<?php get_template_part( 'parts/entry', 'meta' ); ?>
 
