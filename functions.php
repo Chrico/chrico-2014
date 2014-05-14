@@ -6,17 +6,6 @@
  */
 
 
-/**
- * Contains the cc-Theme-Textdomain
- *
- * @since   0.1
- * @created 03.12.2013, cb
- * @updated 03.12.2013, cb
- *
- * @var String
- */
-define( 'CC_TEXTDOMAIN', 'chrico' );
-
 add_action( 'after_setup_theme', 'cc_setup', 0 );
 
 /**
@@ -34,14 +23,14 @@ function cc_setup() {
 	$vendor_dir = __DIR__ . '/vendors/';
 
 	load_theme_textdomain(
-		CC_TEXTDOMAIN,
+		'theme_chrico',
 		get_template_directory() . '/assets/languages'
 	);
 
 	// the theme support
-	add_theme_support( 'menus' );
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ) );
+	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'html5' );
 
 	// general template helpers
 	include_once( $vendor_dir . 'cc/general.php' );

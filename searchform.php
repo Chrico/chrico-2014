@@ -11,7 +11,7 @@
 	<div id="site-search-button">
 		<a href="#site-search-form" role="button" aria-controls="site-search-form">
 			<i class="icon icon-search" aria-hidden="true"></i>
-			<span class="screen-reader-text"><?php _e( 'Search', CC_TEXTDOMAIN ); ?></span>
+			<span class="screen-reader-text"><?php _e( 'Search', 'theme_chrico' ); ?></span>
 		</a>
 	</div>
 	<div id="site-search-form">
@@ -29,7 +29,7 @@
 				echo _x(
 					'Ich suche...',
 					'Search field label (ellipsis)',
-					CC_TEXTDOMAIN
+					'theme_chrico'
 				);
 				?></span>
 				<input id="s" name="s" type="text" class="search-input" value="<?php the_search_query(); ?>" />
@@ -39,7 +39,7 @@
 				echo _x(
 					'finden',
 					'Search form submit button',
-					CC_TEXTDOMAIN
+					'theme_chrico'
 				);
 				?>" />
 			</div>

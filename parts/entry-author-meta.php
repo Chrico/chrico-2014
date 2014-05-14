@@ -16,7 +16,7 @@ if ( get_post_type() !== 'post' || get_the_author_meta( 'description' ) === '' )
 		<?php
 		printf(
 			'<span class="author-by entry-utility-prep">%1$s </span><cite class="fn">%2$s</cite>',
-			_x( 'Über den Autor', 'Autor info box heading prefix', CC_TEXTDOMAIN ),
+			_x( 'Über den Autor', 'Autor info box heading prefix', 'theme_chrico' ),
 			get_the_author_meta( 'display_name' )
 		);
 		?>

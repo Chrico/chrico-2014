@@ -40,13 +40,13 @@ function cc_the_comment( $comment, Array $args, $depth ) {
 					        _x(
 						        '%1$s @ %2$s',
 						        '1: date, 2: time for comment meta',
-						        CC_TEXTDOMAIN
+						        'theme_chrico'
 					        ),
 					        get_comment_date(),
 					        get_comment_time() )
 				);
 				edit_comment_link(
-					__( '[Edit]', CC_TEXTDOMAIN ),
+					__( '[Edit]', 'theme_chrico' ),
 					' <span class="comment-edit-link">',
 					'</span>'
 				);
@@ -54,7 +54,7 @@ function cc_the_comment( $comment, Array $args, $depth ) {
 			</header>
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation alert-info"><?php _e( 'Your comment is awaiting moderation.', CC_TEXTDOMAIN ); ?></p>
+				<p class="comment-awaiting-moderation alert-info"><?php _e( 'Your comment is awaiting moderation.', 'theme_chrico' ); ?></p>
 			<?php endif; ?>
 
 			<section class="comment-content">
@@ -67,7 +67,7 @@ function cc_the_comment( $comment, Array $args, $depth ) {
 					array_merge(
 						$args,
 						array(
-						     'reply_text'=> __( 'Auf diesen Kommentar antworten &raquo;', CC_TEXTDOMAIN ),
+						     'reply_text'=> __( 'Auf diesen Kommentar antworten &raquo;', 'theme_chrico' ),
 						     'depth' 	=> $depth,
 						     'max_depth'	=> 999
 						)

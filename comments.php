@@ -15,7 +15,7 @@ if ( post_password_required() )
 
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
-			<?php _e( 'Das denkt Ihr über diesen Beitrag:', CC_TEXTDOMAIN ) ?>
+			<?php _e( 'Das denkt Ihr über diesen Beitrag:', 'theme_chrico' ) ?>
 		</h2>
 
 		<ol id="commentlist">
@@ -52,7 +52,7 @@ if ( post_password_required() )
 				'%d pingbacks',
 				$num,
 				'Pingbacks title',
-				CC_TEXTDOMAIN
+				'theme_chrico'
 			),
 			$num
 		);
@@ -75,7 +75,7 @@ if ( post_password_required() )
 
 	if ( comments_open() ){
 		$comment_form_args = array(
-			'title_reply' => __( 'Lass uns Deine Meinung wissen!', CC_TEXTDOMAIN ),
+			'title_reply' => __( 'Lass uns Deine Meinung wissen!', 'theme_chrico' ),
 			'comment_notes_after'   => ''
 		);
 		comment_form( $comment_form_args );

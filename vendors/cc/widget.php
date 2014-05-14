@@ -23,7 +23,7 @@ function cc_widgets_init() {
 	// Define widget areas
 	$sidebars = array(
 		array(
-		   'name' => __( 'Post-Widget-Bereich', CC_TEXTDOMAIN ),
+		   'name' => __( 'Post-Widget-Bereich', 'theme_chrico' ),
 		   'id' => 'cc-sidebar-entry',
 		   'description' => __( 'Sidebar für Detail-Seiten', 'chrico' ),
 		   'before_widget' => '<aside id="%1$s" class="widget clear %2$s">',
@@ -32,27 +32,27 @@ function cc_widgets_init() {
 		   'after_title' => '</span></h3>',
 		),
 		array(
-		   'name' => __( 'Footer Widget-Bereich 1', CC_TEXTDOMAIN ),
+		   'name' => __( 'Footer Widget-Bereich 1', 'theme_chrico' ),
 		   'id' => 'cc-sidebar-footer-1',
-		   'description' => __( 'Sidebar den Footer Bereich 1', CC_TEXTDOMAIN ),
+		   'description' => __( 'Sidebar den Footer Bereich 1', 'theme_chrico' ),
 		   'before_widget' => '<aside id="%1$s" class="widget clear %2$s">',
 		   'after_widget' => '</aside>',
 		   'before_title' => '<h3 class="widget-title"><span>',
 		   'after_title' => '</span></h3>',
 		),
 		array(
-			'name' => __( 'Footer Widget-Bereich 2', CC_TEXTDOMAIN ),
+			'name' => __( 'Footer Widget-Bereich 2', 'theme_chrico' ),
 			'id' => 'cc-sidebar-footer-2',
-			'description' => __( 'Sidebar den Footer Bereich 2', CC_TEXTDOMAIN ),
+			'description' => __( 'Sidebar den Footer Bereich 2', 'theme_chrico' ),
 			'before_widget' => '<aside id="%1$s" class="widget clear %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',
 			'after_title' => '</span></h3>',
 		),
 		array(
-			'name' => __( 'Footer Widget-Bereich 3', CC_TEXTDOMAIN ),
+			'name' => __( 'Footer Widget-Bereich 3', 'theme_chrico' ),
 			'id' => 'cc-sidebar-footer-3',
-			'description' => __( 'Sidebar den Footer Bereich 3', CC_TEXTDOMAIN ),
+			'description' => __( 'Sidebar den Footer Bereich 3', 'theme_chrico' ),
 			'before_widget' => '<aside id="%1$s" class="widget clear %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title"><span>',

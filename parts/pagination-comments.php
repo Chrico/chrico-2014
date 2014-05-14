@@ -14,11 +14,11 @@
 			'type' 		=> 'list',
 			'prev_text'	=> sprintf(
 				'<div class="nav-previous">%s</div>',
-				__( '&larr; Older Comments', CC_TEXTDOMAIN )
+				__( '&larr; Older Comments', 'theme_chrico' )
 				),
 			'next_text'	=> sprintf(
 				'<div class="nav-next">%s</div>',
-				__( 'Newer Comments &rarr;', CC_TEXTDOMAIN )
+				__( 'Newer Comments &rarr;', 'theme_chrico' )
 				),
         )
     );

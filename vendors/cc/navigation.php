@@ -20,8 +20,8 @@ function cc_register_nav_menus() {
 
 	register_nav_menus(
 		array(
-		     'cc_header'    => __( 'Header Site Menu', CC_TEXTDOMAIN ),
-		     'cc_footer'    => __( 'Footer Site Menu', CC_TEXTDOMAIN ),
+		     'cc_header'    => __( 'Header Site Menu', 'theme_chrico' ),
+		     'cc_footer'    => __( 'Footer Site Menu', 'theme_chrico' ),
 		)
 	);
 
@@ -53,12 +53,12 @@ function cc_the_nav_menu_fallback_cb( Array $args = array() ) {
 	$h4 = _x(
 		'Hi, %s!',
 		'%s = current user display name',
-		CC_TEXTDOMAIN
+		'theme_chrico'
 	);
 	$p = _x(
 		'Please <a href="%s">create a custom menu</a> and assign it to one of the available menu locations.',
 		'%s = wp-admin/nav-menus.php',
-		CC_TEXTDOMAIN
+		'theme_chrico'
 	);
 	?>
 	<aside class="mp-alert mp-alert-success" role="alert">
