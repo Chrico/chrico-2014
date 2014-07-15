@@ -80,21 +80,25 @@ function cc_get_styles(){
 	// $handle => array( 'src' => $src, 'deps' => $deps, 'version' => $version, 'media' => $media )
 	$styles = array();
 
+	// getting the theme-data
+	$theme_data = wp_get_theme();
+	$version    = $theme_data->Version;
+
 	// adding the main-CSS
 	$styles[ 'chrico' ] = array(
 		'src'       => get_template_directory_uri() . '/assets/css/style' . $suffix . '.css',
 		'deps'      => NULL,
-		'version'   => NULL,
+		'version'   => $version,
 		'media'     => NULL
 	);
 
 	// adding the font awesome
-	$styles[ 'chrico-icons' ] = array(
+	/*$styles[ 'chrico-icons' ] = array(
 		'src'       => get_template_directory_uri() . '/assets/css/icon' . $suffix . '.css',
 		'deps'      => NULL,
 		'version'   => NULL,
 		'media'     => NULL
-	);
+	);*/
 
 	// adding our webfonts
 	$query_args = array( 'family' => 'Imprima|Rancho:400,700' );

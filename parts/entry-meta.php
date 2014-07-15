@@ -27,8 +27,8 @@ if ( is_page() )
 
 
 		$comment_text = '<a href="' . get_comments_link() .'" title="'. __( 'Das denkt Ihr über diesen Beitrag', 'theme_chrico' ) . '">';
-		$comment_text .= $comment_number;
-		$comment_text .= ' <i class="icon icon-comment" aria-hidden="true"></i>';
+		$comment_text .= $comment_number . ' ';
+		$comment_text .= chrico_get_icon( 'comment' );
 		$comment_text .= ' <span class="screen-reader-text">';
 		$comment_text .= _n( 'Meinung', 'Meinungen', $comment_number, 'theme_chrico' );
 		$comment_text .= '</a>';

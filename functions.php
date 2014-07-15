@@ -32,6 +32,10 @@ function cc_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 
+	// helper functions
+	include_once( $vendor_dir . 'cc/helper.php' );
+	add_filter( 'wp_head', 'chrico_filter_wp_head_add_icons' );
+
 	// general template helpers
 	include_once( $vendor_dir . 'cc/general.php' );
 	add_filter( 'init', 'cc_register_tn_sizes' );
@@ -53,6 +57,7 @@ function cc_setup() {
 		// scripts
 		include_once( $vendor_dir . 'cc/frontend/script.php' );
 		add_action( 'wp_enqueue_scripts', 'cc_wp_enqueue_scripts' );
+		add_filter( 'wp_print_scripts', 'chrico_filter_wp_print_scripts_add_html5shiv' );
 
 		// styles
 		include_once( $vendor_dir . 'cc/frontend/style.php' );

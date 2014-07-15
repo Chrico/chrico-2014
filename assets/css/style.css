@@ -276,6 +276,31 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 .mfp-ie7 .mfp-content { padding-top: 44px; }
 .mfp-ie7 .mfp-close { top: 0; right: 0; padding-top: 0; }
 
+/***************************************************************/
+/* icons */
+
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	height: 20px;
+	width: 20px;
+	fill: currentcolor;
+}
+
+	/* icons in navigation */
+	.main-navigation-item .icon {
+		position: absolute;
+		left: 9px;
+		top: 12px;
+		width: 36px;
+		height: 36px;
+	}
+
+	/* the comment icon */
+	.icon-comment {
+		width: 15px;
+		height: 15px;
+	}
 
 /***************************************************************/
 /* colors */
@@ -581,17 +606,6 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 		width: 4em;
 		color:#fff;
 	}
-
-		/* the icon */
-		.main-navigation-item .icon {
-			position: absolute;
-			width:100%;
-			text-align: center;
-			vertical-align: middle;
-			display: block;
-			z-index: 2;
-			font-size:200%;
-		}
 
 		/* the title */
 		.main-navigation-item-title {

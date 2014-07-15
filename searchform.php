@@ -10,7 +10,7 @@
 <div id="site-search">
 	<div id="site-search-button">
 		<a href="#site-search-form" role="button" aria-controls="site-search-form">
-			<i class="icon icon-search" aria-hidden="true"></i>
+			<?php echo chrico_get_icon( 'search' ); ?>
 			<span class="screen-reader-text"><?php _e( 'Search', 'theme_chrico' ); ?></span>
 		</a>
 	</div>

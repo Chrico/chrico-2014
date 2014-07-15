@@ -57,7 +57,7 @@ class CC_Walker_Icon extends Walker_Nav_Menu  {
 		$item_output = $args->before;
 		$item_output .= '<a ' . $attr . '>';
 		$item_output .=  $args->link_before;
-		$item_output .=   '<i class="icon icon-' . $sanitized_title . '" aria-hidden="true"></i>';
+		$item_output .=   chrico_get_icon( $sanitized_title, array( 'viewbox' => '0 0 36 36' ) );
 		$item_output .=   '<span class="' . $nav_item_class . '-title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>';
 		$item_output .=  $args->link_after;
 		$item_output .= '</a>';
