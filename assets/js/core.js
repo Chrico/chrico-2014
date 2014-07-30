@@ -21,6 +21,9 @@
 				'aria-hidden' : !visible,
 				'aria-visible': visible
 			} );
+		if( visible ) {
+			$( '#s' ).focus();
+		}
 	} );
 
 } )( jQuery );
