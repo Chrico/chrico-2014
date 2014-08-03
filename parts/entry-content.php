@@ -7,8 +7,12 @@
  */
 ?>
 <div class="entry-content">
-	<?php get_template_part( 'parts/entry', 'excerpt' ); ?>
 	<?php
+
+	if( !is_page() ):
+		get_template_part( 'parts/entry', 'excerpt' );
+	endif;
+
 	if( is_singular() ){
 		the_content();
 
