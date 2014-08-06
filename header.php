@@ -21,6 +21,7 @@
 
 </head>
 <body <?php body_class(); ?>>
+<?php chrico_the_svg_icons(); ?>
 <div id="site">
 
 	<header id="site-header" role="banner">

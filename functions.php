@@ -34,7 +34,6 @@ function cc_setup() {
 
 	// helper functions
 	include_once( $vendor_dir . 'cc/helper.php' );
-	add_filter( 'wp_head', 'chrico_filter_wp_head_add_icons' );
 
 	// general template helpers
 	include_once( $vendor_dir . 'cc/general.php' );
