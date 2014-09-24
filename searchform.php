@@ -14,8 +14,13 @@
 			<span class="screen-reader-text"><?php _e( 'Search', 'theme_chrico' ); ?></span>
 		</a>
 	</div>
-	<div id="site-search-form">
-		<form class="inline-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<div id="site-search-form" itemscope itemtype="http://schema.org/WebSite">
+		<?php
+		$search_url = esc_url( home_url( '/' ) );
+		?>
+		<meta itemprop="url" content="<?php echo $search_url; ?>"/>
+		<form class="inline-form" action="<?php echo $search_url; ?>" role="search" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+			<meta itemprop="target" content="<?php echo $search_url; ?>?s={s}"/>
 			<label for="s"<?php
 				/**
 				 * Look for search term.
@@ -32,7 +37,7 @@
 					'theme_chrico'
 				);
 				?></span>
-				<input id="s" name="s" type="text" class="search-input" value="<?php the_search_query(); ?>" />
+				<input itemprop="query-input" id="s" name="s" type="text" class="search-input" value="<?php the_search_query(); ?>" />
 			</label>
 			<div class="search-submit">
 				<input type="submit" value="<?php
