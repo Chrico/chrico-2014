@@ -5,6 +5,9 @@
  * @package ChriCo
  */
 
+if ( ! isset( $content_width ) ) {
+	$content_width = 950;
+}
 
 add_action( 'after_setup_theme', 'cc_setup', 0 );
 
