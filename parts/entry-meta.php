@@ -23,9 +23,6 @@ if ( is_page() )
 		// comments
 		$comment_number = get_comments_number();
 
-
-
-
 		$comment_text = '<a href="' . get_comments_link() .'" title="'. __( 'Das denkt Ihr über diesen Beitrag', 'theme_chrico' ) . '">';
 		$comment_text .= $comment_number . ' ';
 		$comment_text .= chrico_get_icon( 'comment' );

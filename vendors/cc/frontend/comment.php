@@ -21,8 +21,6 @@
  * @return void
  */
 function cc_the_comment( $comment, Array $args, $depth ) {
-
-	$post = get_post();
 	?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
@@ -105,18 +103,18 @@ function cc_get_count_pings( $post_id = NULL ) {
 				'status'  => 'approve'
 			)
 		);
-	}
-	else if ( ! empty ( $wp_query->comments ) ) {
+	} else if ( ! empty ( $wp_query->comments ) ) {
 		$comments = $wp_query->comments;
 	}
 
 	if ( ! $comments )
 		return 0;
 
-	foreach ( $comments as $comment )
-		if ( in_array ( $comment->comment_type, array ( 'pingback', 'trackback' ) ) )
+	foreach ( $comments as $comment ) {
+		if ( in_array( $comment->comment_type, array( 'pingback', 'trackback' ) ) ) {
 			$pings += 1;
-
+		}
+	}
 	return $pings;
 }
 
@@ -179,7 +177,7 @@ function cc_get_external_favicon( Array $args = array()  ) {
 
 	$output = '';
 
-	if( $args[ 'url' ] !== '' ) {
+	if ( $args[ 'url' ] !== '' ) {
 		$host	        = parse_url( $args[ 'url' ],  PHP_URL_HOST );
 		$icon_url       = 'https://plus.google.com/_/favicon?domain=' . $host;
 

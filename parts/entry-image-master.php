@@ -15,7 +15,7 @@ if ( !has_post_thumbnail() )
 	<?php
 	$thumb_id   = get_post_thumbnail_id();
 	$thumb      = get_post( $thumb_id );
-	if( $thumb->post_excerpt !== '' ) { ?>
+	if ( $thumb->post_excerpt !== '' ) : ?>
 		<figcaption class="entry-figcaption"><?php echo $thumb->post_excerpt; ?></figcaption>
-	<?php } ?>
+	<?php endif; ?>
 </figure>

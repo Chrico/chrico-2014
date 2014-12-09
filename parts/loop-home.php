@@ -12,17 +12,16 @@ $i = 1;
 /* Start the Loop */
 while ( have_posts() ) : the_post();
 
-	if( $i === 1 ){
+	if ( $i === 1 ) :
 		$template = 'single';
-	}
-	else{
+	else :
 		$template = get_post_format();
-	}
+	endif;
 
 	// in_array( $i, array( 2, 4, 5, 8, 10  ) )
-	if( $i !== 0 && $i%2 === 0 ){
+	if ( $i !== 0 && $i%2 === 0 ) :
 		echo '<div class="clearfix">';
-	}
+	endif;
 
 	get_template_part( 'parts/content', $template );
 
@@ -30,8 +29,8 @@ while ( have_posts() ) : the_post();
 
 	// in_array( $i, array( 3+1, 5+1, 7+1, 9+1, 11+1  ) )
 	// we have to use > instead of >= to compare $i with the post_count
-	if( $i%2 === 0 && $i > 3 || $i > $wp_query->post_count ){
+	if ( $i%2 === 0 && $i > 3 || $i > $wp_query->post_count ) :
 		echo '</div>';
-	}
+	endif;
 
 endwhile;

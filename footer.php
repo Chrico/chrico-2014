@@ -5,9 +5,9 @@
  * @package ChriCo
  */
 ?>
-		<?php if( !is_singular() ) { ?>
-			<?php get_template_part( 'parts/pagination', 'site' ); ?>
-		<?php } ?>
+			<?php if ( !is_singular() ) : ?>
+				<?php get_template_part( 'parts/pagination', 'site' ); ?>
+			<?php endif; ?>
 
 			</div> <?php /* site-content-inner */ ?>
 		</main> <?php /* site-content */ ?>

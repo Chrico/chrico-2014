@@ -7,8 +7,9 @@
  */
 
 // We require content in the author bio field
-if ( get_post_type() !== 'post' || get_the_author_meta( 'description' ) === '' )
+if ( get_post_type() !== 'post' || get_the_author_meta( 'description' ) === '' ) :
 	return;
+endif;
 ?>
 
 <section class="entry-author clearfix">

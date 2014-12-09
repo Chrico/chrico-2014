@@ -10,15 +10,12 @@
 	<div class="entry clearfix">
 
 		<?php
-
 		get_template_part( 'parts/entry', 'header-master' );
 
-		if( is_singular() ) {
-
+		if ( is_singular() ) :
 			get_template_part( 'parts/entry', 'content' );
-
 			get_sidebar();
-		}
+		endif;
 		?>
 
 	</div>

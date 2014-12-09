@@ -14,15 +14,14 @@
  *
  * @return  String
  */
-function chrico_get_icon( $icon ){
-	// old one
-
+function chrico_get_icon( $icon ) {
 	$markup = '<svg class="icon icon-%1$s"><use xlink:href="#icon-%1$s"></use></svg>';
 	$output = sprintf(
 		$markup,
 		esc_attr( $icon )
 	);
-	return apply_filters( 'chrico_get_icon', $output, $icon, $args, $markup );
+
+	return apply_filters( 'chrico_get_icon', $output, $icon, $markup );
 }
 
 

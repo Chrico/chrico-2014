@@ -33,7 +33,7 @@ function cc_register_tn_sizes() {
  *
  * @return  String $suffix
  */
-function cc_get_script_suffix(){
+function cc_get_script_suffix() {
 	return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 }
 
@@ -48,22 +48,22 @@ function cc_get_script_suffix(){
  * @param   Array $classes
  * @return  Array $classes
  */
-function cc_filter_body_class( Array $classes = array() ){
+function cc_filter_body_class( Array $classes = array() ) {
 
 	$slug = '';
-	if( is_singular() ){
+	if ( is_singular() ) {
 		$post = get_post();
 
-		if( $post !== null ){
+		if ( $post !== null ) {
 
 			$terms = wp_get_post_categories( $post->ID );
 
-			if( !is_wp_error( $terms ) ){
+			if ( !is_wp_error( $terms ) ) {
 
 				$term_id = $terms[ 0 ];
 				$category = get_category( $term_id );
 
-				if( !is_wp_error( $category ) ){
+				if ( !is_wp_error( $category ) ) {
 
 					$slug = $category->slug;
 
@@ -72,20 +72,15 @@ function cc_filter_body_class( Array $classes = array() ){
 
 		}
 
-	}
-	else if( is_category() || is_archive() ){
+	} else if ( is_category() || is_archive() ) {
 		$category = get_category( get_query_var( 'cat' ) );
-
-		if( !is_wp_error( $category ) ){
-
+		if ( ! is_wp_error( $category ) ) {
 			$slug = $category->slug;
-
 		}
-
 	}
 
 
-	if( $slug !== '' ){
+	if ( $slug !== '' ) {
 		$classes[] = 'category-' . $slug;
 	}
 

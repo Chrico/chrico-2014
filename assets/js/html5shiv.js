@@ -90,10 +90,10 @@
 	 */
 	function addElements(newElements, ownerDocument) {
 		var elements = html5.elements;
-		if(typeof elements != 'string'){
+		if (typeof elements != 'string') {
 			elements = elements.join(' ');
 		}
-		if(typeof newElements != 'string'){
+		if (typeof newElements != 'string') {
 			newElements = newElements.join(' ');
 		}
 		html5.elements = elements +' '+ newElements;
@@ -124,11 +124,11 @@
 	 * @param {Document} ownerDocument The context document.
 	 * @returns {Object} The shived element.
 	 */
-	function createElement(nodeName, ownerDocument, data){
+	function createElement(nodeName, ownerDocument, data) {
 		if (!ownerDocument) {
 			ownerDocument = document;
 		}
-		if(supportsUnknownElements){
+		if (supportsUnknownElements) {
 			return ownerDocument.createElement(nodeName);
 		}
 		if (!data) {
@@ -160,11 +160,11 @@
 	 * @param {Document} ownerDocument The context document.
 	 * @returns {Object} The shived DocumentFragment.
 	 */
-	function createDocumentFragment(ownerDocument, data){
+	function createDocumentFragment(ownerDocument, data) {
 		if (!ownerDocument) {
 			ownerDocument = document;
 		}
-		if(supportsUnknownElements){
+		if (supportsUnknownElements) {
 			return ownerDocument.createDocumentFragment();
 		}
 		data = data || getExpandoData(ownerDocument);
@@ -172,7 +172,7 @@
 			i = 0,
 			elems = getElements(),
 			l = elems.length;
-		for(;i<l;i++){
+		for(;i<l;i++) {
 			clone.createElement(elems[i]);
 		}
 		return clone;
@@ -201,7 +201,7 @@
 			return createElement(nodeName, ownerDocument, data);
 		};
 
-		ownerDocument.createDocumentFragment = Function('h,f', 'return function(){' +
+		ownerDocument.createDocumentFragment = Function('h,f', 'return function() {' +
 			'var n=f.cloneNode(),c=n.createElement;' +
 			'h.shivMethods&&(' +
 			// unroll the `createElement` calls

@@ -41,16 +41,16 @@ class CC_Walker_Icon extends Walker_Nav_Menu  {
 
 		// link attributes
 		$attributes = array();
-		if( ! empty( $item->attr_title ) && $item->attr_title !== $item->title )
+		if ( ! empty( $item->attr_title ) && $item->attr_title !== $item->title )
 			$attributes[ 'title' ] = esc_attr( $item->attr_title );
 
-		if( ! empty( $item->url ) )
+		if ( ! empty( $item->url ) )
 			$attributes[ 'href' ] = esc_url( $item->url );
 		else
 			$attributes[ 'href' ] = esc_url( get_permalink( $item->ID ) );
 
 		$attr = '';
-		foreach( $attributes as $key => $value ){
+		foreach( $attributes as $key => $value ) {
 			$attr = $key . '="' . $value . '"';
 		}
 

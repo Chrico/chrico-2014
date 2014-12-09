@@ -27,8 +27,9 @@
 				 *
 				 * If the search field has a value, this gets an additional class.
 				 */
-				if( '' !== get_search_query() )
+				if ( '' !== get_search_query() ) :
 					echo ' class="has-value"';
+				endif;
 				?>>
 				<span><?php
 				echo _x(

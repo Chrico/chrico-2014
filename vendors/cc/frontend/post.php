@@ -72,13 +72,13 @@ function cc_filter_excerpt_more( $length ) {
  */
 function cc_filter_pre_get_posts( WP_Query $query ) {
 
-	if( !$query->is_main_query() ) {
-		return;
+	if ( ! $query->is_main_query() ) {
+		return $query;
 	}
 
-	if( $query->is_home() || $query->is_front_page()  ){
+	if ( $query->is_home() || $query->is_front_page()  ) {
 
-		if( !$query->is_paged() ){
+		if ( ! $query->is_paged() ) {
 			$posts_per_page = get_option('posts_per_page') + 1;
 			$query->set( 'posts_per_page', $posts_per_page );
 		}

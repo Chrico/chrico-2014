@@ -45,10 +45,8 @@ function cc_wp_enqueue_scripts() {
  *
  * @return  Array
  */
-function cc_get_scripts(){
-
+function cc_get_scripts() {
 	$suffix = cc_get_script_suffix();
-
 
 	// $handle => array( 'src' => $src, 'deps' => $deps, 'version' => $version, 'in_footer' => $in_footer )
 	$scripts = array();
@@ -72,7 +70,7 @@ function cc_get_scripts(){
  * @wp-hook wp_print_scripts
  * @return  void
  */
-function chrico_filter_wp_print_scripts_add_html5shiv(){
+function chrico_filter_wp_print_scripts_add_html5shiv() {
 	echo '<!--[if lt IE 9]><script src="' . get_template_directory_uri() . '/assets/js/html5shiv.js"></script><![endif]-->';
 	echo '<script async> document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>';
 }

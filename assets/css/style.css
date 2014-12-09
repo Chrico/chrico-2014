@@ -952,7 +952,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 /**
  * media screen && max-width 500px
 */
-@media screen and (max-width: 600px ){
+@media screen and (max-width: 600px ) {
 
 	/* moving the gallery-images to 2 cols */
 	.chrico-gallery .wp-caption { width: 40%; }

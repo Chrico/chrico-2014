@@ -40,6 +40,6 @@
 		<main id="site-content" role="main">
 			<div id="site-content-inner" class="clearfix">
 			<?php
-			if ( function_exists('yoast_breadcrumb') ) {
+			if ( function_exists('yoast_breadcrumb') ) :
 				yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-			}
+			endif;

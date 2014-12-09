@@ -25,12 +25,12 @@
  * @param   string $handle
  * @return  string
  */
-function cc_filter_style_loader_src( $url, $handle ){
-
+function cc_filter_style_loader_src( $url, $handle ) {
 	$host = parse_url( $url, PHP_URL_HOST );
 
-	if ( $host === 'fonts.googleapis.com' )
+	if ( $host === 'fonts.googleapis.com' ) {
 		return remove_query_arg( 'ver', $url );
+	}
 
 	return $url;
 }
@@ -49,10 +49,9 @@ function cc_filter_style_loader_src( $url, $handle ){
  */
 function cc_wp_enqueue_styles() {
 
-
 	$styles = cc_get_styles();
 
-	foreach( $styles as $key => $style ){
+	foreach ( $styles as $key => $style ) {
 		wp_enqueue_style(
 			$key,
 			$style[ 'src' ],
@@ -73,7 +72,7 @@ function cc_wp_enqueue_styles() {
  *
  * @return  Array
  */
-function cc_get_styles(){
+function cc_get_styles() {
 
 	$suffix = cc_get_script_suffix();
 
@@ -91,14 +90,6 @@ function cc_get_styles(){
 		'version'   => $version,
 		'media'     => NULL
 	);
-
-	// adding the font awesome
-	/*$styles[ 'chrico-icons' ] = array(
-		'src'       => get_template_directory_uri() . '/assets/css/icon' . $suffix . '.css',
-		'deps'      => NULL,
-		'version'   => NULL,
-		'media'     => NULL
-	);*/
 
 	// adding our webfonts
 	$query_args = array( 'family' => 'Imprima|Rancho:400,700' );

@@ -20,31 +20,31 @@
  *
  * @return String
  */
-function cc_shortcode_video( $attr, $content ){
+function cc_shortcode_video( $attr, $content ) {
 
-	extract(
-		shortcode_atts(
-			array(
-			     'site'	=>	'youtube',
-			     'id'	=>	null,
-			     'w'		=>	'600',
-			     'h'		=>	'370'
-			),
-			$attr
-		)
+	$default_attr = array(
+		'site'	=>	'youtube',
+		'id'	=>	null,
+		'w'		=>	'600',
+		'h'		=>	'370'
 	);
 
-	if ( $id === null ) {
+	$attr = shortcode_atts( $default_attr, $attr );
+
+	if ( $attr[ 'id' ] === null ) {
 		return '';
 	}
 
-	if ( $site === "youtube" ) {
-		$src = 'https://www.youtube-nocookie.com/embed/' . $id;
-	}
-	else if ( $site === "vimeo" ) {
-		$src = 'https://player.vimeo.com/video/' . $id;
+	$src = '';
+	if ( $attr[ 'site' ] === "youtube" ) {
+		$src = 'https://www.youtube-nocookie.com/embed/' . $attr[ 'id' ];
+	} else if ( $attr[ 'site' ] === "vimeo" ) {
+		$src = 'https://player.vimeo.com/video/' . $attr[ 'id' ];
 	}
 
-	return '<div class="video-container"><iframe width=" ' . $w . '" height="' . $h . '" src="' . $src . '" class="video iframe-' . $site . '"></iframe></div>';
+	if ( $src === '' ) {
+		return '';
+	}
 
+	return '<div class="video-container"><iframe width=" ' . $attr[ 'w' ] . '" height="' . $attr[ 'h' ] . '" src="' . $src . '" class="video iframe-' . $attr[ 'site' ] . '"></iframe></div>';
 }
