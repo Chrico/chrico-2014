@@ -6,6 +6,22 @@
  * Author URI:	    http://www.chrico.info
  */
 
+
+/**
+ * getting the script version for debug- or live-mode
+ *
+ * @return  string
+ */
+function cc_get_script_version() {
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		return time();
+	}
+	// getting the theme-data
+	$theme_data = wp_get_theme();
+	$version    = $theme_data->Version;
+	return $version;
+}
+
 /**
  * Enqueue styles and scripts.
  *
@@ -35,9 +51,6 @@ function cc_wp_enqueue_scripts() {
 
 }
 
-
-
-
 /**
  * Returning our Scripts
  *
@@ -54,14 +67,13 @@ function cc_get_scripts() {
 	// adding the magnific-js
 	$scripts[ 'chrico' ] = array(
 		'src'       => get_template_directory_uri() . '/assets/js/core' . $suffix . '.js',
-		'deps'      => array( 'jquery' ),
-		'version'   => NULL,
+		'deps'      => NULL,
+		'version'   => cc_get_script_version(),
 		'in_footer' => TRUE
 	);
 
 	return apply_filters( 'cc_get_scripts', $scripts );
 }
-
 
 /**
  * Adding html5shiv to the header for older IE's

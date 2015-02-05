@@ -79,15 +79,11 @@ function cc_get_styles() {
 	// $handle => array( 'src' => $src, 'deps' => $deps, 'version' => $version, 'media' => $media )
 	$styles = array();
 
-	// getting the theme-data
-	$theme_data = wp_get_theme();
-	$version    = $theme_data->Version;
-
 	// adding the main-CSS
 	$styles[ 'chrico' ] = array(
 		'src'       => get_template_directory_uri() . '/assets/css/style' . $suffix . '.css',
 		'deps'      => NULL,
-		'version'   => $version,
+		'version'   => cc_get_script_version(),
 		'media'     => NULL
 	);
 
@@ -96,7 +92,7 @@ function cc_get_styles() {
 	$styles[ 'chrico-webfonts' ] = array(
 		'src'       => add_query_arg( $query_args, "//fonts.googleapis.com/css" ),
 		'deps'      => array(),
-		'version'   => NULL,
+		'version'   => cc_get_script_version(),
 		'media'     => NULL
 	);
 
