@@ -1,9 +1,9 @@
 <?php
 /**
  * Feature Name:    Style Functions for ChriCo-Theme
- * Version:		    0.1
- * Author:		    Christian Brückner
- * Author URI:	    http://www.chrico.info
+ * Version:            0.1
+ * Author:            Christian Brückner
+ * Author URI:        http://www.chrico.info
  */
 
 
@@ -23,6 +23,7 @@
  *
  * @param   string $url
  * @param   string $handle
+ *
  * @return  string
  */
 function cc_filter_style_loader_src( $url, $handle ) {
@@ -52,17 +53,10 @@ function cc_wp_enqueue_styles() {
 	$styles = cc_get_styles();
 
 	foreach ( $styles as $key => $style ) {
-		wp_enqueue_style(
-			$key,
-			$style[ 'src' ],
-			$style[ 'deps' ],
-			$style[ 'version' ],
-			$style[ 'media' ]
-		);
+		wp_enqueue_style( $key, $style[ 'src' ], $style[ 'deps' ], $style[ 'version' ], $style[ 'media' ] );
 
 	}
 }
-
 
 
 /**
@@ -81,12 +75,13 @@ function cc_get_styles() {
 
 	// adding the main-CSS
 	$styles[ 'chrico' ] = array(
-		'src'       => get_template_directory_uri() . '/assets/css/style' . $suffix . '.css',
-		'deps'      => NULL,
-		'version'   => cc_get_script_version(),
-		'media'     => NULL
+		'src'     => get_template_directory_uri() . '/assets/css/style' . $suffix . '.css',
+		'deps'    => NULL,
+		'version' => cc_get_script_version(),
+		'media'   => NULL
 	);
 
+	/* moved to chrico main-css-file -> style.css
 	// adding our webfonts
 	$query_args = array( 'family' => 'Imprima|Rancho:400,700' );
 	$styles[ 'chrico-webfonts' ] = array(
@@ -95,6 +90,7 @@ function cc_get_styles() {
 		'version'   => cc_get_script_version(),
 		'media'     => NULL
 	);
+	*/
 
 	return apply_filters( 'cc_get_styles', $styles );
 }
