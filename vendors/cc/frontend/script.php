@@ -82,7 +82,26 @@ function cc_get_scripts() {
  * @wp-hook wp_print_scripts
  * @return  void
  */
-function chrico_filter_wp_print_scripts_add_html5shiv() {
+function cc_filter_wp_print_scripts_add_html5shiv() {
 	echo '<!--[if lt IE 9]><script src="' . get_template_directory_uri() . '/assets/js/html5shiv.js"></script><![endif]-->';
 	echo '<script async> document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>';
+}
+
+/**
+ * Adds the localstorage CSS-Script to header.
+ *
+ * @wp-hook wp_head
+ *
+ * @return void
+ */
+function cc_wp_head_css_localstorage_js(){
+	$style_url = cc_get_webfont_css();
+	?>
+	<script>
+		!function(e,t){
+			var l="<?php echo $style_url; ?>";
+			function a(e,t,a){e.addEventListener?e.addEventListener(t,a,!1):e.attachEvent&&e.attachEvent("on"+t,a)}function c(t){return e.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===t}function n(){if(e.localStorage&&e.XMLHttpRequest)if(c(l))o(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",l,!0),a(n,"load",function(){4===n.readyState&&(o(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=l)}),n.send()}else{var s=t.createElement("link");s.href=l,s.rel="stylesheet",s.type="text/css",t.getElementsByTagName("head")[0].appendChild(s),t.cookie="font_css_cache"}}function o(e){var a=t.createElement("style");a.innerHTML=e,t.getElementsByTagName("head")[0].appendChild(a)}e.localStorage&&localStorage.font_css_cache||t.cookie.indexOf("font_css_cache")>-1?n():a(e,"load",n)
+		}(window,document);
+	</script>
+	<?php
 }

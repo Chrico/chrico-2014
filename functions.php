@@ -31,7 +31,7 @@ function cc_setup() {
 	);
 
 	// the theme support
-	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ) );
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 
@@ -41,7 +41,7 @@ function cc_setup() {
 	// general template helpers
 	include_once( $vendor_dir . 'cc/general.php' );
 	add_filter( 'init', 'cc_register_tn_sizes' );
-	add_filter( 'body_class', 'cc_filter_body_class');
+	add_filter( 'body_class', 'cc_filter_body_class' );
 
 	// navigation
 	include_once( $vendor_dir . 'cc/navigation.php' );
@@ -58,14 +58,13 @@ function cc_setup() {
 
 		// scripts
 		include_once( $vendor_dir . 'cc/frontend/script.php' );
+		add_action( 'wp_head', 'cc_wp_head_css_localstorage_js' );
 		add_action( 'wp_enqueue_scripts', 'cc_wp_enqueue_scripts' );
-		add_filter( 'wp_print_scripts', 'chrico_filter_wp_print_scripts_add_html5shiv' );
+		add_filter( 'wp_print_scripts', 'cc_filter_wp_print_scripts_add_html5shiv' );
 
 		// styles
 		include_once( $vendor_dir . 'cc/frontend/style.php' );
 		add_action( 'wp_enqueue_scripts', 'cc_wp_enqueue_styles' );
-		add_filter( 'style_loader_src', 'cc_filter_style_loader_src', 15, 2 );
-
 
 		include_once( $vendor_dir . 'cc/frontend/shortcode.php' );
 		add_shortcode( 'video', 'cc_shortcode_video' );
@@ -88,14 +87,14 @@ function cc_setup() {
 		add_action( 'wp_footer', 'cc_filter_wp_footer_add_google_analytics' );
 
 		// remove some unused wp-stuff
-		remove_action( 'wp_head', 'rsd_link');
-		remove_action( 'wp_head', 'wp_generator');
-		remove_action( 'wp_head', 'index_rel_link');
-		remove_action( 'wp_head', 'wlwmanifest_link');
-		remove_action( 'wp_head', 'feed_links_extra', 3);
-		remove_action( 'wp_head', 'start_post_rel_link', 10, 0);
-		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0);
-		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0);
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'index_rel_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'feed_links_extra', 3 );
+		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	}
