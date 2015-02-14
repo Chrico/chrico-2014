@@ -58,7 +58,6 @@ function cc_setup() {
 
 		// scripts
 		include_once( $vendor_dir . 'cc/frontend/script.php' );
-		add_action( 'wp_head', 'cc_wp_head_css_localstorage_js' );
 		add_action( 'wp_enqueue_scripts', 'cc_wp_enqueue_scripts' );
 		add_filter( 'wp_print_scripts', 'cc_filter_wp_print_scripts_add_html5shiv' );
 
